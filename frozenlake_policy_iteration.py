@@ -55,7 +55,7 @@ def compute_policy_v(env, policy, gamma=1.0):
             policy_a = policy[s]
             v[s] = sum([p * (r + gamma * prev_v[s_]) for p, s_, r, _ in env.env.P[s][policy_a]]) # P记录着每个状态下采取各种行动的奖励，以及采取某个行动进入到s_状态的概率
         if (np.sum((np.fabs(prev_v - v))) <= eps):
-            # 价值函数收敛，得到最优价值函数
+            # 价值函数收敛
             break
     return v
 
