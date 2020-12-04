@@ -11,7 +11,10 @@ class ValueIterationTrainer(PolicyItertaionTrainer):
         """Conduct one iteration of learning."""
         # [TODO] value function may be need to be reset to zeros.
         # if you think it should, than do it. If not, then move on.
-        # self.table = np.zeros((self.obs_dim,))
+        '''  ********************************************************************************
+        太坑了。。。 价值迭代不能有这句 
+        self.table = np.zeros((self.obs_dim,))
+        '''
 
         # In value iteration, we do not explicit require a
         # policy instance to run. We update value function
