@@ -248,8 +248,6 @@ class PolicyItertaionTrainer(TabularRLTrainerAbstract):
             
             self.policy_table[state] = best_action
 
-        self.policy = lambda obs: self.policy_table[obs]
-
 
 # Solve the TODOs and remove `pass`
 
