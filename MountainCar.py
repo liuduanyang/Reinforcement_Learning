@@ -47,7 +47,7 @@ def play_montecarlo(env,agent,render=False,train=False):
         next_observation, reward, done, _ = env.step(action)
         episode_reward += reward
         if train:
-            agent.train(observation,action,reward,done)  # 智能体学习
+            agent.learn(observation,action,reward,done)  # 智能体学习
         if(done):  # 如果回合结束
             break
         observation = next_observation
