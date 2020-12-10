@@ -65,8 +65,7 @@ class SARSAAgent:
             qs = [self.get_q(observation, action) for action in range(self.action_n)]
             return np.argmax(qs)
         
-    def learn(self, observation, action, reward,
-            next_observation, done, next_action): # 学习
+    def learn(self, observation, action, reward, next_observation, done, next_action): # 学习
         u = reward + (1. - done) * self.gamma * self.get_q(next_observation, next_action)
         td_error = u - self.get_q(observation, action)
         features = self.encode(observation, action)
