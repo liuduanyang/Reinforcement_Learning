@@ -98,7 +98,7 @@ if __name__ == "__main__":
 
     env = gym.make('CartPole-v0')
     env.seed(0)
-    policy_kwargs = {'hidden_sizes':[], 'learning_rate':0.005}
+    policy_kwargs = {'hidden_sizes':[64,12], 'learning_rate':0.005}
     agent = VPGAgent(env, policy_kwargs=policy_kwargs)
 
     # 训练
@@ -106,7 +106,7 @@ if __name__ == "__main__":
     episode_rewards = []
     chart = Chart()
     for episode in range(episodes):
-        episode_reward = play_montecarlo(env, agent, render=True, train=True)
+        episode_reward = play_montecarlo(env, agent, render=False, train=True)
         episode_rewards.append(episode_reward)
         print('episode:{}, reward:{}'.format(episode, episode_reward))
         chart.plot(episode_rewards)
